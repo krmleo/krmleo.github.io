@@ -481,3 +481,43 @@ footer.footer a:hover { color: var(--teal-d); }
     height: 170px;
   }
 }
+
+/* Academic Profile Badges */
+.bio-academic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 290px;
+  margin: 1.25rem auto 0 auto;
+}
+.academic-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--navy);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  white-space: nowrap;
+}
+.academic-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15,32,68,0.12);
+}
+.academic-badge.scholar:hover { border-color: #4285f4; color: #4285f4; }
+.academic-badge.researchgate:hover { border-color: #00ccbb; color: #00a699; }
+.academic-badge.orcid:hover { border-color: #a6ce39; color: #7da519; }
+.academic-badge.scopus:hover { border-color: #ff6f00; color: #ff6f00; }
+.academic-badge.loop:hover { border-color: #1abc9c; color: #16a085; }
+.academic-badge.sciprofiles:hover { border-color: #3498db; color: #2980b9; }
+.academic-badge.github:hover { border-color: #24292e; color: #24292e; }
+.academic-badge.email:hover { border-color: #e74c3c; color: #c0392b; }
+.academic-badge i { font-size: 0.92rem; }
