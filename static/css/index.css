@@ -337,3 +337,146 @@ footer.footer a:hover { color: var(--teal-d); }
   .modal-body { padding: 1.25rem; }
   .modal-title { font-size: 1.05rem; }
 }
+
+/* ===================== ABOUT / BIO SECTION ===================== */
+.bio-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.bio-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+.bio-profile-col {
+  text-align: center;
+  padding: 2.5rem 1.75rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bio-avatar-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--teal), var(--accent), var(--navy));
+  box-shadow: 0 10px 30px rgba(26,188,156,0.25);
+}
+.bio-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 4px solid #ffffff;
+}
+.bio-name {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+.bio-role {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--teal-d);
+  margin-bottom: 0.75rem;
+}
+.bio-affiliations {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.bio-social-links {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.bio-social-links .button {
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  height: auto;
+  transition: all 0.2s ease;
+}
+.bio-content-col {
+  padding: 2.5rem;
+}
+.bio-lead {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #1e293b;
+  margin-bottom: 1.25rem;
+}
+.bio-paragraph {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 1.15rem;
+}
+.bio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.bio-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(26, 188, 156, 0.1);
+  color: var(--teal-d);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  border: 1px solid rgba(26, 188, 156, 0.25);
+}
+.bio-vision-card {
+  margin-top: 1.5rem;
+  padding: 1.4rem 1.6rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(15,32,68,0.04) 0%, rgba(26,188,156,0.08) 100%);
+  border-left: 4px solid var(--teal);
+  position: relative;
+}
+.bio-vision-card .quote-icon {
+  color: var(--teal);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.bio-vision-card p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.75;
+  color: var(--navy);
+  font-style: italic;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .bio-profile-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+  }
+  .bio-content-col {
+    padding: 1.75rem 1.5rem;
+  }
+  .bio-avatar-wrapper {
+    width: 170px;
+    height: 170px;
+  }
+}
