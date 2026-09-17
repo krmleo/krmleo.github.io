@@ -1,4 +1,4 @@
-﻿/* =====================================================
+/* =====================================================
    Karameldeen Omer — Research Portfolio CSS
    Based on the Academic Project Page Template style
    ===================================================== */
@@ -352,7 +352,7 @@ footer.footer a:hover { color: var(--teal-d); }
 }
 .bio-profile-col {
   text-align: center;
-  padding: 2.5rem 1.75rem;
+  padding: 2.5rem 1.75rem !important;
   background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
   border-right: 1px solid var(--border);
   display: flex;
@@ -362,21 +362,22 @@ footer.footer a:hover { color: var(--teal-d); }
 }
 .bio-avatar-wrapper {
   position: relative;
-  width: 220px;
-  height: 220px;
+  width: 210px !important;
+  height: 210px !important;
   margin: 0 auto 1.5rem auto;
-  border-radius: 50%;
-  padding: 6px;
+  border-radius: 50% !important;
+  overflow: hidden;
+  padding: 5px;
   background: linear-gradient(135deg, var(--teal), var(--accent), var(--navy));
   box-shadow: 0 10px 30px rgba(26,188,156,0.25);
 }
 .bio-avatar {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
   display: block;
-  border: 4px solid #ffffff;
+  border: 3px solid #ffffff;
 }
 .bio-name {
   font-size: 1.45rem;
@@ -412,7 +413,7 @@ footer.footer a:hover { color: var(--teal-d); }
   transition: all 0.2s ease;
 }
 .bio-content-col {
-  padding: 2.5rem;
+  padding: 2.75rem 2.5rem 2.75rem 3.75rem !important;
 }
 .bio-lead {
   font-size: 1.05rem;
