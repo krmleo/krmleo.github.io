@@ -1,0 +1,669 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karameldeen Omer — Intelligent Robotic Control for Indoor Navigation</title>
+  <meta name="description" content="PhD research portfolio of Karameldeen Omer — three-layered robotic control for safe indoor navigation in human-centered environments." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/index.css" />
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#"><i class="fas fa-robot" style="margin-right:0.4rem;color:#1abc9c;"></i>KRM Research</a>
+      <a role="button" class="navbar-burger" data-target="navMenu"><span></span><span></span><span></span></a>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#abstract">Abstract</a>
+        <a class="navbar-item" href="#framework">Framework</a>
+        <a class="navbar-item" href="#papers">Papers</a>
+        <a class="navbar-item" href="#previous">Previous Works</a>
+        <a class="navbar-item" href="#results">Results</a>
+        <a class="navbar-item" href="#bibtex">Cite</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="hero is-fullheight-with-navbar hero-gradient">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1">Intelligent Robotic Control for<br/>Indoor Navigation in Human Environments</h1>
+      <p class="subtitle">PhD Research Portfolio &mdash; University of Khartoum &amp; Università Politecnica delle Marche</p>
+      <div class="columns is-centered" style="margin-top:1.5rem;">
+        <div class="column is-10">
+          <span class="author-block"><i class="fas fa-user-graduate"></i> <a href="mailto:k.i.m.omer@pm.univpm.it">Karameldeen Omer</a><sup>1,2</sup></span>
+          <span class="author-block"><i class="fas fa-user"></i> Francesco Ferracuti<sup>2</sup></span>
+          <span class="author-block"><i class="fas fa-user"></i> Alessandro Freddi<sup>2</sup></span>
+          <span class="author-block"><i class="fas fa-user"></i> Sabrina Iarlori<sup>2</sup></span>
+          <span class="author-block"><i class="fas fa-user"></i> Andrea Monteriù<sup>2</sup></span>
+          <span class="author-block"><i class="fas fa-user"></i> Camillo Porcaro<sup>2</sup></span>
+        </div>
+      </div>
+      <div style="margin-top:0.75rem;color:rgba(255,255,255,0.65);font-size:0.88rem;line-height:1.8;"><sup>1</sup>&nbsp;University of Khartoum, Khartoum, Sudan&nbsp;&nbsp;&bull;&nbsp;&nbsp;<sup>2</sup>&nbsp;Dept. Information Engineering, Università Politecnica delle Marche, Ancona, Italy</div>
+      <div class="publication-links" style="margin-top:2rem;">
+        <div class="buttons is-centered">
+          <a class="button" href="https://www.frontiersin.org/articles/10.3389/frobt.2025.1629931" target="_blank"><span class="icon"><i class="fas fa-book"></i></span><span>Frontiers 2025</span></a>
+          <a class="button" href="https://github.com/" target="_blank"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a>
+          <a class="button" href="#papers"><span class="icon"><i class="fas fa-file-alt"></i></span><span>15+ Papers</span></a>
+          <a class="button" href="#bibtex"><span class="icon"><i class="fas fa-quote-right"></i></span><span>Cite</span></a>
+        </div>
+      </div>
+      <div style="margin-top:3rem;color:rgba(255,255,255,0.4);font-size:0.8rem;"><i class="fas fa-chevron-down" style="animation:bounce 2s infinite;"></i><style>@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}</style></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="abstract">
+  <div class="container">
+    <h2 class="section-title">Abstract</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">The overarching PhD research &mdash; published in <em>Frontiers in Robotics and AI</em>, 2025</p>
+    <div class="abstract-box">
+      <p>This research introduces a <strong>three-layered control system</strong> for indoor mobile robot navigation in spaces shared with <strong>elderly or disabled individuals</strong>. The first layer implements a <strong>human-in-the-loop approach</strong> using a <strong>Brain-Computer Interface (BCI)</strong>, allowing real-time human feedback via Error-Related Potentials (ErrP) from EEG signals to correct the robot when it fails to detect obstacles invisible to onboard sensors.</p>
+      <p style="margin-top:1rem;">The second layer is <strong>semi-online</strong>, establishing dynamic <strong>virtual borders</strong> for real-time navigation safety using point cloud data and ROS — enabling flexible, hardware-free zone restriction that can be activated remotely via cloud or local network.</p>
+      <p style="margin-top:1rem;">The third layer is an offline layer that leverages <strong>Building Information Models (BIM)</strong> and <strong>semantic data</strong>, incorporating a new global path-planner that utilises both the robot's knowledge and the building's digital twin. Collectively, this system prioritises <strong>user-centric, safe navigation</strong> in environments with vulnerable occupants.</p>
+      <p style="margin-top:1.25rem;font-size:0.88rem;color:#7f8c8d;"><strong>Full system paper:</strong> K. Omer &amp; A. Monteriù, <em>"Multi-layer robotic controller for enhancing the safety of mobile robot navigation in human-centered indoor environments,"</em> <strong>Frontiers in Robotics and AI</strong>, vol. 12, p. 1629931, 2025.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg" id="framework">
+  <div class="container">
+    <h2 class="section-title">Research Framework</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">Three complementary layers of robot intelligence for safe human-centered navigation</p>
+    <div class="layers-grid">
+      <div class="layer-card">
+        <span class="layer-badge">Layer 1 &mdash; Online</span>
+        <span class="layer-icon">&#x1F9E0;</span>
+        <h3>Human-in-the-Loop via BCI</h3>
+        <p>A BCI protocol based on <strong>Error-Related Potentials (ErrP)</strong> allows a human operator to passively correct robot navigation errors in real time. EEG signals are classified and fed back into the ROS navigation stack. Mental Fatigue Indices (MFI) ensure sustainability for elderly or disabled users.</p>
+        <div style="margin-top:1rem;"><span style="font-size:0.78rem;font-weight:600;color:#1abc9c;"><i class="fas fa-tag"></i> MetroXRAINE 2022/2025 &bull; Brain Sciences 2025 &bull; MFI 2023</span></div>
+      </div>
+      <div class="layer-card">
+        <span class="layer-badge">Layer 2 &mdash; Semi-Online</span>
+        <span class="layer-icon">&#x1F6A7;</span>
+        <h3>Virtual Doors &amp; Borders</h3>
+        <p>A ROS-based method generates <strong>virtual walls, doors, and restricted-area borders</strong> from point cloud data without specialised hardware. Borders are published as sensor topics to the robot cost map and activated/deactivated <strong>remotely via cloud</strong>. Supports single and multi-robot systems.</p>
+        <div style="margin-top:1rem;"><span style="font-size:0.78rem;font-weight:600;color:#1abc9c;"><i class="fas fa-tag"></i> ICARA 2023 &bull; Frontiers R&amp;AI 2022</span></div>
+      </div>
+      <div class="layer-card">
+        <span class="layer-badge">Layer 3 &mdash; Offline</span>
+        <span class="layer-icon">&#x1F5FA;</span>
+        <h3>Semantic BIM Path Planning</h3>
+        <p>Semantic and metric data extracted from a building's <strong>Digital Twin (IFC/BIM)</strong> is stored in an RDF graph database and used to generate <strong>robot-specific navigation maps</strong>. A modified A* path planner assigns semantic penalties for walls, glass, and classified obstacles — enabling context-aware paths.</p>
+        <div style="margin-top:1rem;"><span style="font-size:0.78rem;font-weight:600;color:#1abc9c;"><i class="fas fa-tag"></i> ICARA 2024 &bull; RoboCup 2024 &bull; MetroLivEnv 2025</span></div>
+      </div>
+    </div>
+    <div class="columns is-centered" style="margin-top:3rem;">
+      <div class="column is-10">
+        <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(15,32,68,0.10);padding:2rem;text-align:center;">
+          <h3 style="font-size:1.1rem;font-weight:700;color:#0f2044;margin-bottom:1.5rem;">Three-Layer System Integration</h3>
+          <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+            <div style="background:linear-gradient(135deg,#0f2044,#1a3a6b);color:#fff;border-radius:12px;padding:1rem 1.25rem;min-width:145px;text-align:center;"><div style="font-size:1.5rem;">&#x1F9E0;</div><div style="font-weight:700;font-size:0.82rem;margin-top:0.4rem;">Layer 1: Online</div><div style="color:rgba(255,255,255,0.7);font-size:0.76rem;margin-top:0.3rem;">BCI / ErrP<br/>Human Feedback</div></div>
+            <div style="color:#1abc9c;font-size:1.5rem;">&#8594;</div>
+            <div style="background:linear-gradient(135deg,#0e5c5c,#1abc9c);color:#fff;border-radius:12px;padding:1rem 1.25rem;min-width:145px;text-align:center;"><div style="font-size:1.5rem;">&#x1F6A7;</div><div style="font-weight:700;font-size:0.82rem;margin-top:0.4rem;">Layer 2: Semi-Online</div><div style="color:rgba(255,255,255,0.7);font-size:0.76rem;margin-top:0.3rem;">Virtual Borders<br/>ROS Cost Map</div></div>
+            <div style="color:#1abc9c;font-size:1.5rem;">&#8594;</div>
+            <div style="background:linear-gradient(135deg,#2c3e50,#3498db);color:#fff;border-radius:12px;padding:1rem 1.25rem;min-width:145px;text-align:center;"><div style="font-size:1.5rem;">&#x1F5FA;</div><div style="font-weight:700;font-size:0.82rem;margin-top:0.4rem;">Layer 3: Offline</div><div style="color:rgba(255,255,255,0.7);font-size:0.76rem;margin-top:0.3rem;">BIM Digital Twin<br/>Semantic A* Planner</div></div>
+            <div style="color:#1abc9c;font-size:1.5rem;">&#8594;</div>
+            <div style="background:linear-gradient(135deg,#1abc9c,#17a589);color:#fff;border-radius:12px;padding:1rem 1.25rem;min-width:145px;text-align:center;"><div style="font-size:1.5rem;">&#x1F9BD;</div><div style="font-weight:700;font-size:0.82rem;margin-top:0.4rem;">Safe Navigation</div><div style="color:rgba(255,255,255,0.7);font-size:0.76rem;margin-top:0.3rem;">Wheelchair / Mobile<br/>Robot</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="papers">
+  <div class="container">
+    <h2 class="section-title">Core Publications</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">Key peer-reviewed papers forming the PhD thesis</p>
+    <div class="papers-grid">
+
+      <div class="paper-card" data-paper-id="frontiers25">
+        <div class="paper-thumb-placeholder" style="background:linear-gradient(135deg,#0f2044,#1abc9c);">&#x1F916;</div>
+        <div class="paper-body">
+          <span class="paper-venue">Frontiers in Robotics and AI &middot; 2025</span>
+          <h3>Multi-Layer Robotic Controller for Enhancing the Safety of Mobile Robot Navigation in Human-Centered Indoor Environments</h3>
+          <p>The full integrated three-layer system paper. Frontiers in Robotics and AI, vol. 12, p. 1629931, 2025.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer &amp; A. Monteriù</em></p>
+          <div class="paper-links">
+            <a href="https://www.frontiersin.org/articles/10.3389/frobt.2025.1629931" target="_blank"><i class="fas fa-external-link-alt"></i> Journal</a>
+            <a href="#bib-frontiers25"><i class="fas fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="frontiers22">
+        <img class="paper-thumb" src="static/images/ros_nav.jpg" alt="Human-in-the-loop robot navigation" />
+        <div class="paper-body">
+          <span class="paper-venue">Frontiers in Robotics and AI &middot; 2022</span>
+          <h3>A Human-in-the-Loop Approach for Enhancing Mobile Robot Navigation in Presence of Obstacles Not Detected by the Sensory Set</h3>
+          <p>EEG-based ErrP BCI for real-time obstacle correction feedback. Vol. 9, p. 909971, Frontiers Media SA, 2022.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>Ferracuti, Freddi, Iarlori, Monteriù, Omer, Porcaro</em></p>
+          <div class="paper-links">
+            <a href="https://www.frontiersin.org/articles/10.3389/frobt.2022.909971" target="_blank"><i class="fas fa-external-link-alt"></i> Journal</a>
+            <a href="#bib-frontiers22"><i class="fas fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="brainsci">
+        <img class="paper-thumb" src="static/images/eeg_4class_channels.png" alt="EEG signal channels" />
+        <div class="paper-body">
+          <span class="paper-venue">Brain Sciences &middot; MDPI 2025</span>
+          <h3>Real-Time Mobile Robot Obstacles Detection and Avoidance Through EEG Signals</h3>
+          <p>Extended passive BCI study for real-time obstacle detection via EEG. Brain Sciences, vol. 15, no. 4, p. 359, MDPI, 2025.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>Omer, Ferracuti, Freddi, Iarlori, Vella, Monteriù</em></p>
+          <div class="paper-links">
+            <a href="https://doi.org/10.3390/brainsci15040359" target="_blank"><i class="fas fa-external-link-alt"></i> Journal</a>
+            <a href="#bib-brainsci"><i class="fas fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="icara23">
+        <img class="paper-thumb" src="static/images/multi_doors.png" alt="Multiple virtual doors active" />
+        <div class="paper-body">
+          <span class="paper-venue">ICARA 2023 &middot; IEEE</span>
+          <h3>An Effective Method for Creating Virtual Doors and Borders to Prevent Autonomous Mobile Robots from Entering Restricted Areas</h3>
+          <p>ROS + point-cloud virtual wall generation without specialised hardware. Proc. 9th ICARA, pp. 192-196, IEEE, 2023.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer &amp; A. Monteriù</em></p>
+          <div class="paper-links">
+            <a href="#bib-icara23"><i class="fas fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="icara24">
+        <img class="paper-thumb" src="static/images/bim_pipeline.png" alt="BIM to robot navigation pipeline" />
+        <div class="paper-body">
+          <span class="paper-venue">ICARA 2024 &middot; IEEE</span>
+          <h3>Semantic-Enhanced Path Planning for Safety-Centric Indoor Robots Navigation</h3>
+          <p>Semantic BIM integration for robot-specific navigation maps with safety-aware A* planning. Proc. 10th ICARA, pp. 185-190, IEEE, 2024.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer, E. Torta, A. Monteriù</em></p>
+          <div class="paper-links">
+            <a href="#bib-icara24"><i class="fas fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="robocup24">
+        <img class="paper-thumb" src="static/images/semantic_astar.png" alt="Semantic A* path planning" />
+        <div class="paper-body">
+          <span class="paper-venue">RoboCup / Robot World Cup 2024 &middot; Springer</span>
+          <h3>Semantic Path Planning for Heterogeneous Robots from Building Digital Twin Data</h3>
+          <p>Full BIM-to-path-planner pipeline using RDF graph database with per-class obstacle penalties. Robot World Cup, pp. 56-67, Springer Nature, 2024.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>Omer, de Vos, Pauwels, Torta, Monteriù</em></p>
+          <div class="paper-links">
+            <a href="#bib-robocup24"><i class="fas fa-quote-right"></i> Cite</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="previous">
+  <div class="container">
+    <h2 class="section-title">Previous &amp; Related Works</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">Conference papers, workshops, and extended research directions (2022&ndash;2026)</p>
+    <div class="papers-grid">
+
+      <div class="paper-card" data-paper-id="metrox22">
+        <div class="paper-thumb-placeholder" style="background:linear-gradient(135deg,#1a3a6b,#2c3e50);">&#x1F4E1;</div>
+        <div class="paper-body">
+          <span class="paper-venue">MetroXRAINE 2022 &middot; IEEE</span>
+          <h3>Human-in-the-Loop Approach for Enhanced Mobile Robot Navigation</h3>
+          <p>Conference version of the ErrP-BCI human-in-the-loop work. Designed the oddball protocol for EEG acquisition and tested 10 subjects. Proc. IEEE MetroXRAINE, pp. 416-421, 2022.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>Omer, Ferracuti, Freddi, Iarlori, Monteriù, Porcaro</em></p>
+          <div class="paper-links"><a href="#bib-metrox22"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="mfi23">
+        <div class="paper-thumb-placeholder" style="background:linear-gradient(135deg,#0e5c5c,#0f2044);">&#x26A1;</div>
+        <div class="paper-body">
+          <span class="paper-venue">MetroXRAINE 2023 &middot; IEEE</span>
+          <h3>Mental Fatigue Evaluation for Passive and Active BCI Methods for Wheelchair-Robot During Human-in-the-Loop Control</h3>
+          <p>Compares passive ErrP vs. P300/SSVEP methods for mental load using MFI indices. Passive BCIs showed lower fatigue. Proc. IEEE MetroXRAINE, pp. 787-792, 2023.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>Omer, Vella, Ferracuti, Freddi, Iarlori, Monteriù</em></p>
+          <div class="paper-links"><a href="#bib-mfi23"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="icesat23">
+        <div class="paper-thumb-placeholder" style="background:linear-gradient(135deg,#2c3e50,#1abc9c);">&#x1F52C;</div>
+        <div class="paper-body">
+          <span class="paper-venue">ICESAT 2023 &middot; IEEE</span>
+          <h3>Enhancing Lives with Brain-Robot Interfacing</h3>
+          <p>Overview of BCI applications for enhancing quality of life. Int. Conference on Engineering, Science and Advanced Technology, p. 237, 2023.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer</em></p>
+          <div class="paper-links"><a href="#bib-icesat23"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="metrox25errp">
+        <img class="paper-thumb" src="static/images/eeg_4class_channels.png" alt="Multi-class ErrP EEG channels" />
+        <div class="paper-body">
+          <span class="paper-venue">MetroXRAINE 2025 &middot; IEEE</span>
+          <h3>Multi-Class Error-Related Potentials for Correcting Robot Navigation Mistakes: A Human-in-the-Loop Approach Using EEG Brain-Robot-Interfacing</h3>
+          <p>Extends ErrP classification to four error severity classes for finer-grained robot correction. Proc. IEEE MetroXRAINE, pp. 1131-1135, 2025.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>Omer, Ferracuti, Freddi, Iarlori, Monteriù</em></p>
+          <div class="paper-links"><a href="#bib-metrox25errp"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="ssvep25">
+        <img class="paper-thumb" src="static/images/ssvep_experiment.png" alt="SSVEP BCI experiment" />
+        <div class="paper-body">
+          <span class="paper-venue">MetroXRAINE 2025 &middot; IEEE</span>
+          <h3>Towards Effortless Brain-Computer Interaction: An SSVEP-Based BCI with Object Detection in FPV</h3>
+          <p>SSVEP-based active BCI using object detection in first-person view for effortless assistive robot control. Proc. IEEE MetroXRAINE, pp. 1194-1199, 2025.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer &amp; A. Monteriù</em></p>
+          <div class="paper-links"><a href="#bib-ssvep25"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="edgeimp26">
+        <img class="paper-thumb" src="static/images/edge_impulse_allsub.png" alt="Edge Impulse multi-class ErrP" />
+        <div class="paper-body">
+          <span class="paper-venue">ICARA 2026 &middot; IEEE</span>
+          <h3>Leveraging Edge Impulse for Multi-Class Error-Related Potentials: Edge AI Brain-Robot Interface for Correcting Navigation Errors</h3>
+          <p>Deploys multi-class ErrP classification on edge hardware via Edge Impulse for embedded BCI navigation correction. Proc. 12th ICARA, pp. 545-549, IEEE, 2026.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer &amp; A. Monteriù</em></p>
+          <div class="paper-links"><a href="#bib-edgeimp26"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="livenv25">
+        <img class="paper-thumb" src="static/images/bim_3dmodel.png" alt="Edge AI for BIM digital twins" />
+        <div class="paper-body">
+          <span class="paper-venue">MetroLivEnv 2025 &middot; IEEE</span>
+          <h3>Edge AI for Object Recognition in Digital Twins: Enhancing Indoor Navigation and BIM Systems for Living Environments</h3>
+          <p>Integrates Edge AI object recognition with BIM digital twins to enhance robot indoor navigation. Proc. IEEE MetroLivEnv, pp. 490-494, 2025.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer &amp; A. Monteriù</em></p>
+          <div class="paper-links"><a href="#bib-livenv25"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="vlm26">
+        <img class="paper-thumb" src="static/images/vlm_bci_protocol.png" alt="VLM BCI protocol" />
+        <div class="paper-body">
+          <span class="paper-venue">MetroXRAINE 2026 &middot; IEEE</span>
+          <h3>Leveraging Vision-Language Foundation Models to Enhance Assistive Non-Invasive Brain-Computer Interfaces in VR and Robotic Applications</h3>
+          <p>Uses VLMs to reduce cognitive workload in BCI paradigms for natural control of assistive technologies in VR and robotics. IEEE MetroXRAINE 2026.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer &amp; A. Monteriù</em></p>
+          <div class="paper-links"><a href="#bib-vlm26"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="cogaal26">
+        <div class="paper-thumb-placeholder" style="background:linear-gradient(135deg,#1a3a6b,#17a589);">&#x1F3E0;</div>
+        <div class="paper-body">
+          <span class="paper-venue">MetroLivEnv 2026 &middot; IEEE</span>
+          <h3>CogAAL: A Privacy-Preserving, Full-Stack Cognitive Architecture Integrating Local VLMs, Heterogeneous Robotics, and IoT for Proactive Ambient Assisted Living</h3>
+          <p>Unified cognitive architecture for proactive AAL using local VLMs, heterogeneous robots and IoT without cloud inference. Proc. IEEE MetroLivEnv, pp. 157-161, 2026.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>Omer, Ferracuti, Monteriù</em></p>
+          <div class="paper-links"><a href="#bib-cogaal26"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="embodied26">
+        <div class="paper-thumb-placeholder" style="background:linear-gradient(135deg,#2c3e50,#3498db);">&#x1F4AC;</div>
+        <div class="paper-body">
+          <span class="paper-venue">ICARA 2026 &middot; IEEE</span>
+          <h3>Toward Embodied Intelligence: An Architecture for Natural Dialogue and Action Execution in Assistive Robots</h3>
+          <p>Architecture enabling natural language dialogue and action execution for assistive robots, moving toward embodied AI for AAL. Proc. 12th ICARA, pp. 42-47, IEEE, 2026.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer &amp; A. Monteriù</em></p>
+          <div class="paper-links"><a href="#bib-embodied26"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      
+
+      <div class="paper-card" data-paper-id="aicutting">
+        <img class="paper-thumb" src="static/images/ai_cutting_heatmap.png" alt="Deep learning fault detection heatmap" />
+        <div class="paper-body">
+          <span class="paper-venue">Preprint &middot; Under Review</span>
+          <h3>Multimodal Deep Learning for Real-Time Fault Detection in Robotic Oxy-Fuel Steel Cutting Systems</h3>
+          <p>Multimodal deep learning framework for real-time fault detection in industrial robotic oxy-fuel cutting. Addresses open-loop limitations that degrade cut quality and increase waste.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer et al.</em></p>
+          <div class="paper-links"><a href="#bib-aicutting"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+      <div class="paper-card" data-paper-id="ssvepshape">
+        <img class="paper-thumb" src="static/images/ssvep_stimuli.png" alt="SSVEP stimulus optimization" />
+        <div class="paper-body">
+          <span class="paper-venue">Under Review</span>
+          <h3>Optimization of Shape, Chromatic Properties of SSVEP Stimuli for First-Person-View BCIs in Robotic and Virtual Reality Applications</h3>
+          <p>Investigates how stimulus shape, color, and texture affect SSVEP BCI performance in dynamic FPV robotic and VR environments.</p>
+          <p style="margin-top:0.5rem;font-size:0.8rem;color:#95a5a6;"><em>K. Omer &amp; A. Monteriù</em></p>
+          <div class="paper-links"><a href="#bib-ssvepshape"><i class="fas fa-quote-right"></i> Cite</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <div class="container">
+    <h2 class="section-title">Key Results &amp; Visuals</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">Selected figures from the core publications</p>
+    <div class="figures-gallery">
+      <figure class="fig-item">
+        <img src="static/images/ros_nav.jpg" alt="ROS navigation stack with virtual wall point-cloud node" />
+        <figcaption>ROS navigation stack node subscribing to the virtual-wall point-cloud topic to update the robot cost map.</figcaption>
+      </figure>
+      <figure class="fig-item">
+        <img src="static/images/avoid_door.png" alt="Robot avoiding a virtual door" />
+        <figcaption>Robot re-planning its path around an activated virtual door — green spline shows the updated trajectory.</figcaption>
+      </figure>
+      <figure class="fig-item">
+        <img src="static/images/multi_doors.png" alt="Multiple virtual doors active" />
+        <figcaption>Multiple virtual walls and doors active simultaneously, including a polygon-shaped restricted area.</figcaption>
+      </figure>
+      <figure class="fig-item">
+        <img src="static/images/bim_3dmodel.png" alt="3D BIM model" />
+        <figcaption>3D BIM model of the two-room simulation environment used for semantic path planning evaluation.</figcaption>
+      </figure>
+      <figure class="fig-item">
+        <img src="static/images/normal_astar.png" alt="Conventional A* vs Semantic A* path" />
+        <figcaption>Conventional A* (left) vs. Semantic A* (right) — semantic planner keeps safe distance from glass partitions.</figcaption>
+      </figure>
+      <figure class="fig-item">
+        <img src="static/images/bim_pipeline.png" alt="BIM to robot navigation pipeline" />
+        <figcaption>Full pipeline: BIM/IFC &rarr; RDF graph database &rarr; robot-specific navigation map &rarr; semantic A* path planner.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="bibtex-section" id="bibtex">
+  <div class="container">
+    <h2 class="section-title">BibTeX Citations</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">All citations sourced from official publication records &mdash; click to expand</p>
+    <div style="max-width:860px;margin:0 auto;">
+
+      <div class="bib-card" id="bib-frontiers25">
+        <div class="bib-header"><span><i class="fas fa-star" style="color:#f39c12;margin-right:0.5rem;"></i>Frontiers in Robotics and AI 2025 &mdash; Full System Paper</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@article{omer2025multilayer,
+  author    = {Omer, Karameldeen and Monteriù, Andrea},
+  title     = {Multi-layer robotic controller for enhancing the safety of mobile
+               robot navigation in human-centered indoor environments},
+  journal   = {Frontiers in Robotics and AI},
+  volume    = {12},
+  pages     = {1629931},
+  year      = {2025},
+  publisher = {Frontiers Media SA},
+  doi       = {10.3389/frobt.2025.1629931}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-frontiers22">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>Frontiers in Robotics and AI 2022 &mdash; Human-in-the-Loop</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@article{ferracuti2022humanloop,
+  author    = {Ferracuti, Francesco and Freddi, Alessandro and Iarlori, Sabrina
+               and Monteriù, Andrea and Omer, Karameldeen Ibrahim Mohamed and Porcaro, Camillo},
+  title     = {A human-in-the-loop approach for enhancing mobile robot navigation
+               in presence of obstacles not detected by the sensory set},
+  journal   = {Frontiers in Robotics and AI},
+  volume    = {9},
+  pages     = {909971},
+  year      = {2022},
+  publisher = {Frontiers Media SA},
+  doi       = {10.3389/frobt.2022.909971}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-brainsci">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>Brain Sciences 2025 &mdash; Real-Time EEG Obstacle Detection</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@article{omer2025brainsci,
+  author    = {Omer, Karameldeen and Ferracuti, Francesco and Freddi, Alessandro
+               and Iarlori, Sabrina and Vella, Francesco and Monteriù, Andrea},
+  title     = {Real-time mobile robot obstacles detection and avoidance through {EEG} signals},
+  journal   = {Brain Sciences},
+  volume    = {15},
+  number    = {4},
+  pages     = {359},
+  year      = {2025},
+  publisher = {MDPI},
+  doi       = {10.3390/brainsci15040359}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-icara23">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>ICARA 2023 &mdash; Virtual Doors and Borders</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2023virtual,
+  author    = {Omer, Karameldeen and Monteriù, Andrea},
+  title     = {An effective method for creating virtual doors and borders to prevent
+               autonomous mobile robots from entering restricted areas},
+  booktitle = {2023 9th International Conference on Automation, Robotics and
+               Applications (ICARA)},
+  pages     = {192--196},
+  year      = {2023},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-icara24">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>ICARA 2024 &mdash; Semantic Path Planning</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2024semantic,
+  author    = {Omer, Karameldeen and Torta, Elena and Monteriù, Andrea},
+  title     = {Semantic-enhanced path planning for safety-centric indoor robots navigation},
+  booktitle = {2024 10th International Conference on Automation, Robotics and
+               Applications (ICARA)},
+  pages     = {185--190},
+  year      = {2024},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-robocup24">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>RoboCup 2024 &mdash; Semantic BIM Path Planning</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2024bimplanning,
+  author    = {Omer, Karameldeen and de Vos, Koen and Pauwels, Pieter
+               and Torta, Elena and Monteriù, Andrea},
+  title     = {Semantic path planning for heterogeneous robots from building digital twin data},
+  booktitle = {Robot World Cup},
+  pages     = {56--67},
+  year      = {2024},
+  publisher = {Springer Nature Switzerland}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-metrox22">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>MetroXRAINE 2022 &mdash; Human-in-the-Loop Conference</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2022metrox,
+  author    = {Omer, Karameldeen and Ferracuti, Francesco and Freddi, Alessandro
+               and Iarlori, Sabrina and Monteriù, Andrea and Porcaro, Camillo},
+  title     = {Human-in-the-loop approach for enhanced mobile robot navigation},
+  booktitle = {2022 IEEE International Conference on Metrology for Extended Reality,
+               Artificial Intelligence and Neural Engineering (MetroXRAINE)},
+  pages     = {416--421},
+  year      = {2022},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-mfi23">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>MetroXRAINE 2023 &mdash; Mental Fatigue Evaluation</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2023mentalfatigue,
+  author    = {Omer, Karameldeen and Vella, Francesco and Ferracuti, Francesco
+               and Freddi, Alessandro and Iarlori, Sabrina and Monteriù, Andrea},
+  title     = {Mental fatigue evaluation for passive and active {BCI} methods
+               for wheelchair-robot during human-in-the-loop control},
+  booktitle = {2023 IEEE International Conference on Metrology for eXtended Reality,
+               Artificial Intelligence and Neural Engineering (MetroXRAINE)},
+  pages     = {787--792},
+  year      = {2023},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-icesat23">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>ICESAT 2023 &mdash; Brain-Robot Interfacing</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2023icesat,
+  author    = {Omer, Karameldeen},
+  title     = {Enhancing Lives with Brain-Robot Interfacing},
+  booktitle = {2023 International Conference on Engineering, Science and
+               Advanced Technology (ICESAT)},
+  pages     = {237},
+  year      = {2023},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-metrox25errp">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>MetroXRAINE 2025 &mdash; Multi-Class ErrP</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2025multiclass,
+  author    = {Omer, Karameldeen and Ferracuti, Francesco and Freddi, Alessandro
+               and Iarlori, Sabrina and Monteriù, Andrea},
+  title     = {Multi-Class Error-Related Potentials for Correcting Robot Navigation
+               Mistakes: A Human-in-the-Loop Approach Using {EEG} Brain-Robot-Interfacing},
+  booktitle = {2025 IEEE International Conference on Metrology for eXtended Reality,
+               Artificial Intelligence and Neural Engineering (MetroXRAINE)},
+  pages     = {1131--1135},
+  year      = {2025},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-ssvep25">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>MetroXRAINE 2025 &mdash; Effortless SSVEP BCI</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2025ssvep,
+  author    = {Omer, Karameldeen and Monteriù, Andrea},
+  title     = {Towards Effortless Brain-Computer Interaction:
+               An {SSVEP}-Based {BCI} with Object Detection in {FPV}},
+  booktitle = {2025 IEEE International Conference on Metrology for eXtended Reality,
+               Artificial Intelligence and Neural Engineering (MetroXRAINE)},
+  pages     = {1194--1199},
+  year      = {2025},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-edgeimp26">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>ICARA 2026 &mdash; Edge Impulse Multi-Class ErrP</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2026edgeimpulse,
+  author    = {Omer, Karameldeen and Monteriù, Andrea},
+  title     = {Leveraging Edge Impulse for Multi-Class Error-Related Potentials:
+               Edge {AI} Brain-Robot Interface for Correcting Navigation Errors
+               in Assistive Mobile Robot Wheelchairs},
+  booktitle = {2026 12th International Conference on Automation, Robotics and
+               Applications (ICARA)},
+  pages     = {545--549},
+  year      = {2026},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-livenv25">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>MetroLivEnv 2025 &mdash; Edge AI for BIM Digital Twins</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2025edgeai,
+  author    = {Omer, Karameldeen and Monteriù, Andrea},
+  title     = {Edge {AI} for object recognition in digital twins: enhancing
+               indoor navigation and {BIM} systems for living environments},
+  booktitle = {2025 IEEE International Workshop on Metrology for Living Environment
+               (MetroLivEnv)},
+  pages     = {490--494},
+  year      = {2025},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-cogaal26">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>MetroLivEnv 2026 &mdash; CogAAL Architecture</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2026cogaal,
+  author    = {Omer, Karameldeen and Ferracuti, Francesco and Monteriù, Andrea},
+  title     = {{CogAAL}: A Privacy-Preserving, Full-Stack Cognitive Architecture
+               Integrating Local {VLM}s, Heterogeneous Robotics, and {IoT}
+               for Proactive Ambient Assisted Living},
+  booktitle = {2026 IEEE International Workshop on Metrology for Living Environment
+               (MetroLivEnv)},
+  pages     = {157--161},
+  year      = {2026},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-embodied26">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>ICARA 2026 &mdash; Embodied Intelligence</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2026embodied,
+  author    = {Omer, Karameldeen and Monteriù, Andrea},
+  title     = {Toward Embodied Intelligence: An Architecture for Natural Dialogue
+               and Action Execution in Assistive Robots},
+  booktitle = {2026 12th International Conference on Automation, Robotics and
+               Applications (ICARA)},
+  pages     = {42--47},
+  year      = {2026},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      
+
+      <div class="bib-card" id="bib-aicutting">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>Multimodal Deep Learning for Robotic Steel Cutting (Preprint)</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@misc{omer2026aicutting,
+  author = {Omer, Karameldeen et al.},
+  title  = {Multimodal Deep Learning for Real-Time Fault Detection in
+            Robotic Oxy-Fuel Steel Cutting Systems},
+  year   = {2026},
+  note   = {Preprint / Under Review}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-vlm26">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>MetroXRAINE 2026 &mdash; VLM for Assistive BCI</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@inproceedings{omer2026vlmbci,
+  author    = {Omer, Karameldeen and Monteriù, Andrea},
+  title     = {Leveraging Vision-Language Foundation Models to Enhance Assistive
+               Non-Invasive Brain-Computer Interfaces in {VR} and Robotic Applications},
+  booktitle = {2026 IEEE International Conference on Metrology for eXtended Reality,
+               Artificial Intelligence and Neural Engineering (MetroXRAINE)},
+  year      = {2026},
+  publisher = {IEEE}
+}</pre></div>
+      </div>
+
+      <div class="bib-card" id="bib-ssvepshape">
+        <div class="bib-header"><span><i class="fas fa-file-alt" style="color:#1abc9c;margin-right:0.5rem;"></i>SSVEP Stimulus Optimization (Under Review)</span><span class="toggle-icon"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="bib-body"><pre>@misc{omer2026ssvepshape,
+  author = {Omer, Karameldeen and Monteriù, Andrea},
+  title  = {Optimization of Shape, Chromatic Properties of {SSVEP} Stimuli for
+            First-Person-View Brain-Computer Interfaces in Robotic and
+            Virtual Reality Applications},
+  year   = {2026},
+  note   = {Under Review}
+}</pre></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.</p>
+    <p style="margin-top:0.4rem;">&copy; 2022&ndash;2026 Karameldeen Omer &mdash; Università Politecnica delle Marche, Ancona, Italy. Licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0 License</a>.</p>
+  </div>
+</footer>
+<script src="static/js/index.js"></script>
+</body>
+</html>
+
+
+
